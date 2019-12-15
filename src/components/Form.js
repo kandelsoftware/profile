@@ -91,7 +91,7 @@ class Form extends Component {
       <div className="wrapper">
         <div className="form-wrapper">
           <h1>Contact Us</h1>
-          <form onSubmit={this.handleSubmit} noValidate name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+          <form action="POST" data-netlify="true" onSubmit={this.handleSubmit} noValidate name="contact-form"  >
             <div className="firstName">
               <label htmlFor="firstName">First Name</label>
               <input
@@ -148,7 +148,7 @@ class Form extends Component {
                 <span className="errorMessage">{formErrors.password}</span>
               )}
             </div>
-            <div className="createAccount">
+            <div className="actions">
               <button type="submit">Send</button>
             </div>
           </form>
