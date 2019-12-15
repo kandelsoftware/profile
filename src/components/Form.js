@@ -28,12 +28,10 @@ class Form extends Component {
       firstName: null,
       lastName: null,
       email: null,
-      password: null,
       formErrors: {
         firstName: "",
         lastName: "",
         email: "",
-        password: ""
       }
     };
   }
@@ -47,7 +45,6 @@ class Form extends Component {
         First Name: ${this.state.firstName}
         Last Name: ${this.state.lastName}
         Email: ${this.state.email}
-        Password: ${this.state.password}
       `);
     } else {
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
@@ -73,10 +70,7 @@ class Form extends Component {
           ? ""
           : "invalid email address";
         break;
-      case "password":
-        formErrors.password =
-          value.length < 6 ? "minimum 6 characaters required" : "";
-        break;
+     
       default:
         break;
     }
