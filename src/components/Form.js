@@ -85,25 +85,25 @@ class Form extends Component {
       <div className="wrapper">
         <div className="form-wrapper">
           <h1>Contact Us</h1>
-          <form name="contact" method="POST" data-netlify="true">
-        <p>
-          <label>Your Name: <input type="text" name="name" /></label>   
-        </p>
-        <p>
-          <label>Your Email: <input type="email" name="email" /></label>
-        </p>
-        <p>
-          <label>Your Role: <select name="role[]" multiple>
-              <option value="leader">Leader</option>
-              <option value="follower">Follower</option>
-            </select></label>
-        </p>
-        <p>
-          <label>Message: <textarea name="message" defaultValue={""} /></label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
+          <form name="landing-form" method="post" netlify>
+        <div className="fields">
+          <div className="field half">
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div className="field half">
+            <label htmlFor="email">Email</label>
+            <input type="text" name="email" id="email" />
+          </div>
+          <div className="field">
+            <label htmlFor="message">Message</label>
+            <textarea name="message" id="message" rows={6} defaultValue={""} />
+          </div>
+        </div>
+        <ul className="actions">
+          <li><input type="submit" defaultValue="Send Message" className="primary" /></li>
+          <li><input type="reset" defaultValue="Clear" /></li>
+        </ul>
       </form>
         </div>
       </div>
