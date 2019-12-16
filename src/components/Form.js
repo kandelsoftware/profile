@@ -85,67 +85,26 @@ class Form extends Component {
       <div className="wrapper">
         <div className="form-wrapper">
           <h1>Contact Us</h1>
-          <form action="POST" data-netlify="true" onSubmit={this.handleSubmit} noValidate name="contact-form"  >
-            <div className="firstName">
-              <label htmlFor="firstName">First Name</label>
-              <input
-                className={formErrors.firstName.length > 0 ? "error" : null}
-                placeholder="First Name"
-                type="text"
-                name="firstName"
-                noValidate
-                onChange={this.handleChange}
-              />
-              {formErrors.firstName.length > 0 && (
-                <span className="errorMessage">{formErrors.firstName}</span>
-              )}
-            </div>
-            <div className="lastName">
-              <label htmlFor="lastName">Last Name</label>
-              <input
-                className={formErrors.lastName.length > 0 ? "error" : null}
-                placeholder="Last Name"
-                type="text"
-                name="lastName"
-                noValidate
-                onChange={this.handleChange}
-              />
-              {formErrors.lastName.length > 0 && (
-                <span className="errorMessage">{formErrors.lastName}</span>
-              )}
-            </div>
-            <div className="email">
-              <label htmlFor="email">Email</label>
-              <input
-                className={formErrors.email.length > 0 ? "error" : null}
-                placeholder="Email"
-                type="email"
-                name="email"
-                noValidate
-                onChange={this.handleChange}
-              />
-              {formErrors.email.length > 0 && (
-                <span className="errorMessage">{formErrors.email}</span>
-              )}
-            </div>
-            <div className="password">
-              <label htmlFor="text">Message</label>
-              <textarea
-                className={formErrors.password.length > 0 ? "error" : null}
-                placeholder="Message"
-                type="text"
-                name="text"
-                noValidate
-                onChange={this.handleChange}
-              />
-              {formErrors.password.length > 0 && (
-                <span className="errorMessage">{formErrors.password}</span>
-              )}
-            </div>
-            <div className="actions">
-              <button type="submit">Send</button>
-            </div>
-          </form>
+          <form name="contact" method="POST" data-netlify="true">
+        <p>
+          <label>Your Name: <input type="text" name="name" /></label>   
+        </p>
+        <p>
+          <label>Your Email: <input type="email" name="email" /></label>
+        </p>
+        <p>
+          <label>Your Role: <select name="role[]" multiple>
+              <option value="leader">Leader</option>
+              <option value="follower">Follower</option>
+            </select></label>
+        </p>
+        <p>
+          <label>Message: <textarea name="message" defaultValue={""} /></label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
+      </form>
         </div>
       </div>
     );
